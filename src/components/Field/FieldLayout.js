@@ -1,13 +1,12 @@
 import styles from './FieldLayout.module.css';
-import './FieldLayout.module.css';
 import PropTypes from 'prop-types';
-import { store } from '../../store';
+import { useSelector } from 'react-redux';
 
 export const FieldLayout = () => {
-	const { field } = store.getState();
+	const field = useSelector((state) => state.field);
+	const onCellClick = useSelector((state) => state.onCellClick);
 
 	const handleCellClick = (index) => {
-		const { onCellClick } = store.getState();
 		if (onCellClick) {
 			onCellClick(index);
 		}

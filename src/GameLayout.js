@@ -1,12 +1,14 @@
 import styles from './GameLayout.module.css';
 import { FieldLayout } from './components/Field/FieldLayout';
 import { InformationLayout } from './components/Information/InformationLayout';
-import { store } from './store';
+import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 export const GameLayout = () => {
+	const dispatch = useDispatch();
+
 	const resetGame = () => {
-		store.dispatch({ type: 'RESTART_GAME' });
+		dispatch({ type: 'RESTART_GAME' });
 	};
 
 	return (
