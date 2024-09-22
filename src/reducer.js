@@ -1,4 +1,3 @@
-// reducer.js
 const initialState = {
 	field: Array(9).fill(''),
 	currentPlayer: 'X',
